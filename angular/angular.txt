@@ -1,0 +1,85 @@
+Основні елементи ангулара
+
+Директива(Компоненти, розширення html) - View
+Сервіси - Logic
+Контролери + $scope - Звязок
+
+----------------------------------------
+
+1. Attribute directive
+<div ng-dir="exp"></div>
+
+2. Element dir
+<ng-dir></ng-dir>
+
+3. Comments dir
+<!-- directive: my-dir exp -->
+
+4. Class dir
+<div class="ng-dir: exp;"></div>
+
+------------------------------------------
+
+All directives includes on 'ng' module. This module will include in your project by default. 
+
+-----------------------------------------
+Директиви
+
+ng-app  - директива приложения
+
+ng-click, ng-change,  - Обробка подій
+
+ng-class, ng-href, ng-src - Директиви для стандартних атрибутів
+
+<a>, <input>, <form> - Всі html теги мають свої ангулар диретиви, ангулар робить розширення цих тегів
+
+ng-if, ng-repeat, ng-include - Логіка шаблонізатора
+
+ng-controller, ng-model, ng-transclude - спеціальні директиви
+
+ng-bind  - <div ng-bind="x"></div>  == <div> {{ x }}</div>
+ng-bind-html="x"   - виводить html
+----------------------------------------
+Варіанти дата атрибутів-диревтив
+
+ng-click
+ng:click
+data-ng-click
+ng_click
+x-ng-click
+
+-----------------------------------------
+
+app.directive('dir_name', function factory() {
+  var dirDefinitionObj = {
+    restrict: 'E', (E, C, A or AE (attr and element))
+    templateUrl: 'derective.html,
+    scope: {
+      user: '='
+    }
+    link: function postLink(scope, element, attr) {
+
+    };
+  },
+  return dirDefinitionObj;
+});
+
+
+
+--------------------------------------------
+
+Filters in ng-repeat
+
+| - pipe
+
+----------------------------------------------
+
+Servises
+
+$scope, $rootScope  - глобальні області 
+$filter
+$window, $document, $location
+$timeout, $interval
+$q   - promises
+$http, $httpBackend
+$parce, $compile
