@@ -83,3 +83,34 @@ $timeout, $interval
 $q   - promises
 $http, $httpBackend
 $parce, $compile
+
+
+
+
+
+
+-----------------------------------------------
+
+
+ В директиві параметр scope
+
+ scope: false або відсутність його - підключаєтсья скоуп батька
+
+ scope: true, or scope: {}  - created oun isolated scope
+
+
+-----------------------------------------------
+передача даних в скоуп через атрибут
+
+ scope: {
+  user: "=currentUser"
+ }
+
+
+<container current-user="admin"></container>
+
+= - двойное связивание
+
+@ - получаем значение 
+
+&
